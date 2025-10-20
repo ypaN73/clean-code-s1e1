@@ -18,9 +18,9 @@
 
   <body class="page">
     <header class="matrix">
-      <img src="./eisenhower-matrix.jpg" alt="Eisenhower Matrix">
+      <img src="./eisenhower-matrix.jpg" alt="Eisenhower Matrix" class="matrix__image">
       <a
-        class="matrix__more-info"
+        class="matrix__link matrix__link_more-info"
         href="https://goal-life.com/page/method/matrix-eisenhower"
       >
         Want more details?
@@ -28,51 +28,51 @@
     </header>
 
     <main class="todo-app">
-      <section id="add-task-section">
-        <label for="new-task">Add Item</label>
+      <section class="todo-app__add-task" id="add-task-section">
+        <label class="todo-app__label" for="new-task">Add Item</label>
       </section>
 
-      <section class="task-row">
-        <input id="new-task" class="task-input" type="text">
-        <button class="task-add-button">Add</button>
+      <section class="todo-app__task-row">
+        <input id="new-task" class="todo-app__task-input" type="text">
+        <button class="todo-app__button todo-app__button_add">Add</button>
       </section>
 
-      <section class="todo-section">
-        <h2 class="todo-heading">Todo</h2>
+      <section class="todo-app__todo-section">
+        <h2 class="todo-app__heading todo-app__heading_todo">Todo</h2>
 
-        <ul id="incomplete-tasks" class="task-list">
-          <li class="task-item">
-            <input type="checkbox" class="task-checkbox">
-            <label class="task-label">Pay Bills</label>
-            <input type="text" class="task-input">
-            <button class="task-edit">Edit</button>
-            <button class="task-delete">
-              <img src="./remove.svg" alt="Remove Task">
+        <ul id="incomplete-tasks" class="todo-app__task-list">
+          <li class="todo-app__task-item">
+            <input type="checkbox" class="todo-app__checkbox">
+            <label class="todo-app__label todo-app__label_task">Pay Bills</label>
+            <input type="text" class="todo-app__task-input">
+            <button class="todo-app__button todo-app__button_edit">Edit</button>
+            <button class="todo-app__button todo-app__button_delete">
+              <img src="./remove.svg" alt="Remove Task" class="todo-app__icon">
             </button>
           </li>
-          <li class="task-item edit-mode">
-            <input type="checkbox" class="task-checkbox">
-            <label class="task-label">Go Shopping</label>
-            <input type="text" value="Go Shopping" class="task-input">
-            <button class="task-edit">Save</button>
-            <button class="task-delete">
-              <img src="./remove.svg" alt="Remove Task">
+          <li class="todo-app__task-item todo-app__task-item_edit-mode">
+            <input type="checkbox" class="todo-app__checkbox">
+            <label class="todo-app__label todo-app__label_task">Go Shopping</label>
+            <input type="text" value="Go Shopping" class="todo-app__task-input">
+            <button class="todo-app__button todo-app__button_edit">Save</button>
+            <button class="todo-app__button todo-app__button_delete">
+              <img src="./remove.svg" alt="Remove Task" class="todo-app__icon">
             </button>
           </li>
         </ul>
       </section>
 
-      <section class="completed-section">
-        <h2 class="completed-heading">Completed</h2>
+      <section class="todo-app__completed-section">
+        <h2 class="todo-app__heading todo-app__heading_completed">Completed</h2>
 
-        <ul id="completed-tasks" class="task-list">
-          <li class="task-item">
-            <input type="checkbox" checked class="task-checkbox">
-            <label class="task-label">See the Doctor</label>
-            <input type="text" class="task-input">
-            <button class="task-edit">Edit</button>
-            <button class="task-delete">
-              <img src="./remove.svg" alt="Remove Task">
+        <ul id="completed-tasks" class="todo-app__task-list">
+          <li class="todo-app__task-item">
+            <input type="checkbox" checked class="todo-app__checkbox">
+            <label class="todo-app__label todo-app__label_task">See the Doctor</label>
+            <input type="text" class="todo-app__task-input">
+            <button class="todo-app__button todo-app__button_edit">Edit</button>
+            <button class="todo-app__button todo-app__button_delete">
+              <img src="./remove.svg" alt="Remove Task" class="todo-app__icon">
             </button>
           </li>
         </ul>

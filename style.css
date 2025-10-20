@@ -10,13 +10,14 @@
   margin: 0 auto;
   display: block;
   text-align: right;
+  margin-bottom: 20px;
 }
 
-.matrix img {
+.matrix__image {
   width: 100%;
 }
 
-.matrix__more-info {
+.matrix__link {
   font-family: fantasy, cursive;
 }
 
@@ -32,23 +33,52 @@
   margin: 0 auto 0;
 }
 
-.task-input {
-  width: 56%;
-  display: inline-block;
-  flex-grow: 1;
+/* Add Item */
+.todo-app__label {
+  display: block;
+  margin: 0 0 20px;
+  padding: 30px 0 10px;
+  border-bottom: 2px solid #333;
+  color: #333;
+  font-weight: 700;
+  font-size: 15px;
+  text-transform: uppercase;
 }
 
-.task-row {
+.todo-app__task-row {
   display: flex;
+  gap: 10px;
+  margin-bottom: 0;
 }
 
-.task-list {
+#new-task,
+.todo-app__task-input {
+  flex-grow: 1;
+  margin: 0;
+  font-size: 18px;
+  line-height: 18px;
+  height: 21px;
+  padding: 0 9px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 6px;
+  font-family: Lato, sans-serif;
+  color: #888;
+  box-sizing: border-box;
+}
+
+.todo-app__task-input:focus {
+  color: #333;
+}
+
+/* Task list */
+.todo-app__task-list {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.task-item {
+.todo-app__task-item {
   overflow: hidden;
   padding: 20px 0;
   border-bottom: 1px solid #eee;
@@ -57,38 +87,40 @@
   align-items: center;
 }
 
-.task-item > * {
+.todo-app__task-item > * {
   vertical-align: middle;
 }
 
-.task-checkbox {
+.todo-app__checkbox {
   margin: 0 10px;
 }
 
-.task-label {
+.todo-app__label_task {
   padding-left: 10px;
   box-sizing: border-box;
   font-size: 18px;
   width: 226px;
+  font-weight: normal;
+  text-decoration: none;
 }
 
-.task-item > .task-input {
+.todo-app__task-item > .todo-app__task-input {
   width: 226px;
 }
 
-.task-delete img {
+.todo-app__button_delete img {
   height: 2em;
   transform: rotateZ(45deg);
   transition: transform 200ms ease-in;
 }
 
-.task-delete img:hover {
+.todo-app__button_delete img:hover {
   transform: rotateZ(0);
 }
 
-.todo-heading,
-.completed-heading,
-label[for="new-task"] {
+/* Headings */
+.todo-app__heading {
+  display: block;
   color: #333;
   font-weight: 700;
   font-size: 15px;
@@ -98,31 +130,25 @@ label[for="new-task"] {
   text-transform: uppercase;
 }
 
-label[for="new-task"] {
-  display: block;
-  margin: 0 0 20px;
+/* Completed */
+#completed-tasks .todo-app__label_task {
+  text-decoration: line-through;
+  color: #888;
+  font-weight: normal;
 }
 
-#new-task {
-  width: 318px;
-}
-
-.task-item .task-input {
+/* Edit Task */
+.todo-app__task-item .todo-app__task-input {
   display: none;
 }
 
-.task-item.edit-mode .task-input {
+.todo-app__task-item_edit-mode .todo-app__task-input {
   display: inline-block;
   width: 224px;
 }
 
-.task-item.edit-mode .task-label {
+.todo-app__task-item_edit-mode .todo-app__label_task {
   display: none;
-}
-
-#completed-tasks .task-label {
-  text-decoration: line-through;
-  color: #888;
 }
 
 input,
@@ -142,4 +168,13 @@ button {
 
 button:hover {
   color: #3a3a3a;
+}
+
+.todo-app__task-item label.todo-app__label_task {
+  font-weight: normal !important;
+  text-decoration: none !important;
+  border: none;
+  padding: 0;
+  margin: 0;
+  text-transform: none;
 }
