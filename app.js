@@ -1,10 +1,8 @@
-// DOM элементы
 const taskInput = document.getElementById("new-task");
 const addButton = document.querySelector(".todo-app__button_add");
 const incompleteTaskHolder = document.getElementById("incomplete-tasks");
 const completedTasksHolder = document.getElementById("completed-tasks");
 
-// Создание новой задачи
 function createNewTaskElement(taskText) {
     const li = document.createElement("li");
     li.className = "todo-app__task-item";
@@ -43,7 +41,6 @@ function createNewTaskElement(taskText) {
     return li;
 }
 
-// Добавление новой задачи
 function addTask() {
     const taskText = taskInput.value.trim();
     if (!taskText) return;
@@ -53,7 +50,6 @@ function addTask() {
     taskInput.value = "";
 }
 
-// Редактирование задачи
 function editTask() {
     const listItem = this.closest("li");
     const label = listItem.querySelector(".todo-app__label_task");
@@ -71,27 +67,23 @@ function editTask() {
     listItem.classList.toggle("todo-app__task-item_edit-mode");
 }
 
-// Удаление задачи
 function deleteTask() {
     const listItem = this.closest("li");
     listItem.parentNode.removeChild(listItem);
 }
 
-// Отмечаем задачу как выполненную
 function taskCompleted() {
     const listItem = this.closest("li");
     completedTasksHolder.appendChild(listItem);
     bindTaskEvents(listItem);
 }
 
-// Отмечаем задачу как невыполненную
 function taskIncomplete() {
     const listItem = this.closest("li");
     incompleteTaskHolder.appendChild(listItem);
     bindTaskEvents(listItem);
 }
 
-// Привязка событий к элементу li
 function bindTaskEvents(li) {
     const checkbox = li.querySelector(".todo-app__checkbox");
     const editBtn = li.querySelector(".todo-app__button_edit");
@@ -106,14 +98,11 @@ function bindTaskEvents(li) {
     };
 }
 
-// Привязка кнопки Add
 addButton.onclick = addTask;
 
-// Enter для добавления
 taskInput.addEventListener("keypress", function(e) {
     if (e.key === "Enter") addTask();
 });
 
-// Инициализация существующих задач
 Array.from(incompleteTaskHolder.children).forEach(bindTaskEvents);
 Array.from(completedTasksHolder.children).forEach(bindTaskEvents);
