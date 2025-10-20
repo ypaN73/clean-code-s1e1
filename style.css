@@ -20,7 +20,7 @@ body {
   font-family: fantasy, cursive;
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
   .matrix {
     text-align: center;
   }
@@ -44,7 +44,7 @@ body {
 
 ul {
   margin: 0;
-  padding: 0px;
+  padding: 0;
 }
 
 li,
@@ -59,7 +59,7 @@ button {
 
 button {
   background: none;
-  border: 0px;
+  border: 0;
   color: #888;
   font-size: 15px;
   width: 60px;
@@ -115,28 +115,27 @@ li {
   overflow: hidden;
   padding: 20px 0;
   border-bottom: 1px solid #eee;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-li>* {
+li > * {
   vertical-align: middle;
 }
 
-li>input[type="checkbox"] {
+li > input[type="checkbox"] {
   margin: 0 10px;
 }
 
-li>label {
+li > label {
   padding-left: 10px;
   box-sizing: border-box;
   font-size: 18px;
   width: 226px;
 }
 
-li>input[type="text"] {
+li > input[type="text"] {
   width: 226px;
 }
 
@@ -157,11 +156,11 @@ ul#completed-tasks label {
 }
 
 /* Edit Task */
-ul li input[type=text] {
+ul li input[type="text"] {
   display: none;
 }
 
-ul li.editMode input[type=text] {
+ul li.editMode input[type="text"] {
   display: inline-block;
   width: 224px;
 }
